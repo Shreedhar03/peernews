@@ -1,0 +1,52 @@
+<div class="container mx-auto px-6 my-12">
+    <div class="w-full lg:w-8/12 mx-auto">
+        <div class="bg-white p-5 rounded-lg shadow-lg">
+            <!-- image -->
+            <div class="flex justify-center items-center">
+                <img src="{{ news.img }}" alt="news" class="w-full h-64 object-cover object-center rounded-lg">
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <span class="font-light text-gray-600">{{ news.pubDate }}</span>
+            </div>
+            <div class="mt-2">
+                <a href="#" class="text-2xl text-gray-700 font-bold hover:text-gray-600">{{ news.title }}</a>
+                <p class="mt-2 text-gray-600" [class.line-clamp-6]="!showFullNews">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, harum beatae? Omnis dignissimos
+                    necessitatibus eos nostrum. Officiis culpa optio vitae reiciendis praesentium dolore earum
+                    aspernatur quaerat doloremque. Vel, ipsa et quibusdam incidunt non labore aspernatur autem magni
+                    sunt, aliquid facere, recusandae ducimus! Corporis molestias deleniti unde, perferendis veritatis,
+                    modi ad blanditiis repellendus dolores ipsa a asperiores, eligendi nesciunt rerum non atque
+                    voluptatum voluptate vitae consequatur. Pariatur quibusdam dolor animi! Animi, odit quo. Impedit
+                    voluptate voluptatem eos adipisci optio! Consectetur autem error nostrum vero totam eligendi, illum
+                    nesciunt. Beatae provident vel, animi voluptas commodi odio quisquam placeat facere soluta tempora
+                    autem repudiandae enim itaque quibusdam optio expedita aliquam aperiam, nemo sapiente, sequi
+                    adipisci iusto impedit. Qui repellendus repudiandae vero sed harum, illo, ea quae modi possimus,
+                    dolor consequatur dignissimos nisi quisquam suscipit optio iusto officiis quaerat beatae? Quas in
+                    repellendus vitae sit officiis voluptas distinctio facere repellat incidunt eaque, sequi, natus
+                    optio tempora voluptates dignissimos repudiandae ut. Ullam dolorem ipsum quibusdam placeat mollitia
+                    aliquam qui cupiditate, molestiae enim deleniti laborum quo omnis doloribus doloremque aliquid hic
+                    eligendi optio magni culpa vel esse fugit consectetur beatae? Nulla eligendi itaque ratione velit
+                    modi debitis, similique laboriosam rerum nisi eveniet accusantium rem quidem. Maiores repellendus
+                    natus eum doloribus ratione, nesciunt molestiae soluta, dolorem nisi minima assumenda minus illum?
+                    Quo hic optio quos modi iste sunt quisquam nihil? Tempore temporibus corporis quos ducimus
+                    blanditiis deleniti ad, repellendus ipsam cum officia delectus aperiam fugit voluptatibus sed
+                    tempora porro mollitia accusantium officiis maiores adipisci dolorem excepturi? Unde id mollitia
+                    consequatur, quis omnis numquam cupiditate? Placeat dolores suscipit quam cumque cupiditate
+                    voluptatum, delectus distinctio. Molestias, magni sed? Sapiente, laborum quibusdam voluptate ea
+                    molestiae nihil aperiam suscipit nostrum architecto perspiciatis culpa explicabo temporibus! Aliquid
+                    nemo, tempore pariatur voluptatum voluptas excepturi molestiae iure ad ea, esse facere, eaque
+                    repellat aut.
+                </p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <button (click)="toggleFullNews()" class="text-blue-600 hover:underline">
+                    {{ showFullNews ? 'Show less' : 'Show more' }}
+                </button>
+                <div>
+                    <a href="#" class="flex items-center">
+                        <h1 class="text-sm text-gray-900 font-semibold">John Doe</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
