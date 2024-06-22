@@ -3,7 +3,8 @@
         <div class="bg-white p-5 rounded-lg shadow-lg">
             <!-- image -->
             <div class="flex justify-center items-center">
-                <img src="{{ news.img }}" alt="news" class="w-full h-64 object-cover object-center rounded-lg">
+                <img src="{{ news.img }}/{{routeId*100}}/{{routeId*100}}" alt="news"
+                    class="w-full h-64 object-cover object-center rounded-lg">
             </div>
             <div class="flex justify-between items-center mt-4">
                 <span class="font-light text-gray-600">{{ news.pubDate }}</span>

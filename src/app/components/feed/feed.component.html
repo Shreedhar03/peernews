@@ -6,7 +6,8 @@
         @for (newsItem of latestNews; track $index) {
         <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4">
             <div class="md:w-1/2">
-                <img src="{{ newsItem.img }}" alt="{{ newsItem.title }}" class="w-full h-64 object-cover rounded-lg">
+                <img src="{{ newsItem.img }}/{{ (100 * ($index + 2)) }}/{{ (100 * ($index + 2)) }}"
+                    alt="{{ newsItem.title }}" class="w-full h-64 object-cover rounded-lg">
             </div>
             <div class="md:w-1/2">
                 <h2 class="text-2xl font-bold">{{ newsItem.title }}</h2>
