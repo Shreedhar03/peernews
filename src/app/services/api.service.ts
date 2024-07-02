@@ -15,6 +15,13 @@ export class ApiService {
     return this.http.post(`${this.url}/register`, user);
   }
   public loginUser(username: String, password: String): Observable<any> {
-    return this.http.post(`${this.url}/login`, { username, password });
+    // store response in a variable
+    const response = this.http.post(`${this.url}/login`, {
+      username,
+      password,
+    });
+    // return the response
+    console.log({ response });
+    return response;
   }
 }
