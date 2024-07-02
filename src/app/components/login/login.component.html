@@ -1,7 +1,7 @@
 <!-- login form -->
 
 <div class="container mx-auto flex justify-center items-center py-20">
-    <div class="w-96">
+    <div class="max-w-96 w-full mx-12">
         <h1 class="text-3xl font-semibold mb-6">Login</h1>
         <form [formGroup]="loginForm" (submit)="onSubmit()" novalidate>
             <div class="mb-4">
@@ -20,9 +20,9 @@
             </p>
 
             <div class="mb-4">
-                <button type="submit" [disabled]="loginForm.invalid"
-                    class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-black focus:outline-none focusoutline-none py-2:outline-none"
-                    [class.opacity-60]="loginForm.invalid">Login</button>
+                <button [disabled]="loginForm.invalid" [class.cursor-not-allowed]="loginForm.invalid" type="submit"
+                    style="box-shadow: 2px 2px 0 0 #05aed5;border-radius: 4px;"
+                    class="bg-gray-900 hover:bg-black text-white py-2 px-8 rounded">LOGIN</button>
             </div>
         </form>
     </div>
