@@ -1,0 +1,35 @@
+<section class="container mx-auto py-20">
+
+    <form class="mx-4 w-full sm:w-10/12 sm:mx-12" [formGroup]="postForm" (submit)="onSubmit()">
+
+        <h1 class="text-3xl font-light">New Tech Article🗞️</h1>
+
+        <div class="my-4">
+            <app-divider />
+        </div>
+
+        <div class="mt-12">
+            <input formControlName="title" type="text" id="title" name="title"
+                class="mt-1 px-3 py-2 border-b border-b-gray-600 focus:border-black focus:outline-none block w-full text-lg"
+                placeholder="Title">
+        </div>
+
+        <div class="mt-4">
+            <textarea formControlName="content" id="content" name="content" rows="6"
+                class="leading-6 mt-1 px-3 py-2 border-b border-b-gray-600 focus:border-black focus:outline-none block w-full text-lg"
+                placeholder="Content"></textarea>
+        </div>
+
+        <!-- <div class="mt-4">
+            <label for="image" class="text-2xl block font-medium text-gray-700">Image</label>
+            <input type="file" id="image" name="image"
+                class="mt-1 px-3 py-2 border border-gray-900 focus:outline-none block w-full rounded-md">
+        </div> -->
+
+        <div class="mt-8">
+            <button [disabled]="postForm.invalid" [class.cursor-not-allowed]="postForm.invalid" type="submit"
+                style="box-shadow: 2px 2px 0 0 #05aed5;border-radius: 4px;"
+                class="bg-gray-900 hover:bg-black text-white py-2 px-8 rounded">Post 🚀</button>
+        </div>
+    </form>
+</section>

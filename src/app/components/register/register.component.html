@@ -1,6 +1,6 @@
 <!-- register form -->
 
-<div class="container mx-auto flex justify-center items-center py-20">
+<div class="container mx-auto flex justify-center items-center py-16">
     <div class="w-96">
         <h1 class="text-3xl font-semibold mb-6">Register</h1>
         <form [formGroup]="registerForm" (submit)="onSubmit()">
@@ -31,8 +31,13 @@
                     class="mt-1 focus:outline-none px-4 py-2 border border-gray-800 block w-full shadow-sm sm:text-sm rounded-md">
             </div>
             <div class="mb-4">
-                <button type="submit"
-                    class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600 focus:outline-none focusoutline-none py-2:outline-none">Login</button>
+                <button [disabled]="registerForm.invalid" [class.cursor-not-allowed]="registerForm.invalid"
+                    type="submit" style="box-shadow: 2px 2px 0 0 #05aed5;border-radius: 4px;"
+                    class="bg-gray-900 hover:bg-black text-white py-2 px-8 rounded">REGISTER</button>
+            </div>
+
+            <div>
+                <p>Already have an account? <a routerLink="/login" class="text-blue-500 cursor-pointer">Login</a></p>
             </div>
         </form>
     </div>
