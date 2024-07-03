@@ -17,12 +17,6 @@ export class FeedComponent {
 
   constructor(private api: ApiService) {}
 
-  ngOnInit() {
-    this.api.getNews().subscribe((news) => {
-      this.latestNews = news.news;
-      console.log({ news: this.latestNews });
-    });
-  // pagination
   pageSize = 5;
   currentPage = 1;
 
@@ -57,4 +51,12 @@ export class FeedComponent {
     window.scrollTo(0, 0);
     this.currentPage = page;
   }
+
+  ngOnInit() {
+    this.api.getNews().subscribe((news) => {
+      this.latestNews = news.news;
+      console.log({ news: this.latestNews });
+    });
+  }
+  // pagination
 }
