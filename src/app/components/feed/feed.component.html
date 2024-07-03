@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-4">
         <!-- loop through latestNews array-->
 
-        @for (newsItem of latestNews; track $index) {
+        @for (newsItem of paginatedNews; track $index) {
         <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4">
             <div class="md:w-1/2">
                 <img src="{{ newsItem.img }}/{{ (100 * ($index + 2)) }}/{{ (100 * ($index + 2)) }}"
@@ -19,4 +19,29 @@
         }
 
     </div>
+
+    <!-- Pagination -->
+
+    <div class="flex justify-center gap-4 mt-8">
+        <button (click)="prevPage()" class="bg-gray-800 text-white px-4 py-2 rounded-lg" [disabled]="currentPage === 1"
+            [class.opacity-20]="currentPage === 1">
+            Previous
+        </button>
+
+        <div class="flex gap-2">
+            @for (i of pages; track $index){
+            <button (click)="changePage(i)" class="px-4 py-2 rounded-lg" [class.border]="currentPage === i"
+                [class.border-gray-800]="currentPage === i" [class.bg-gray-800]="currentPage !== i"
+                [class.text-white]="currentPage !== i">
+                {{ i }}
+            </button>
+            }
+        </div>
+
+        <button (click)="nextPage()" class="bg-gray-800 text-white px-4 py-2 rounded-lg"
+            [disabled]="currentPage === totalPages" [class.opacity-20]="currentPage === totalPages">
+            Next
+        </button>
+    </div>
+
 </main>
