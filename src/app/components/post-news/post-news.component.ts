@@ -6,6 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { DividerComponent } from '../ui/divider/divider.component';
+import { ApiService } from '../../services/api.service';
+import { NewsItem } from '../../interfaces/news-item.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-news',
@@ -20,9 +23,28 @@ export class PostNewsComponent {
     content: new FormControl('', [Validators.required]),
   });
 
-  constructor() {}
+  constructor(private api: ApiService, private router: Router) {}
 
   onSubmit() {
-    console.log(this.postForm.value);
+    if (this.postForm.invalid) {
+      return;
+    }
+    const news: NewsItem = {
+      title: this.postForm.value.title ?? '',
+      content: this.postForm.value.content ?? '',
+      // date in format 'dd/mm/yyyy'
+      date: new Date().toLocaleDateString(),
+      authorId: '66842630a66d36582a78daeb',
+    };
+    this.api.postNews(news).subscribe(
+      (response) => {
+        console.log({ response });
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.error({ error });
+        this.router.navigate(['/']);
+      }
+    );
   }
 }
